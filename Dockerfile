@@ -3,7 +3,7 @@
 FROM daocloud.io/abulo/docker-php:base
 
 # 维护者信息
-MAINTAINER abulo.hoo@gmail.com
+MAINTAINER 1396981439@.com
 
 
 # 编译 PHP
