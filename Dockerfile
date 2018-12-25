@@ -3,7 +3,7 @@
 FROM daocloud.io/php_ity/docker-php:base
 
 # 维护者信息
-MAINTAINER 1396981439@.com
+MAINTAINER 1396981439@qq.com
 
 
 # 编译 PHP
