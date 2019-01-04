@@ -52,6 +52,8 @@ RUN mkdir -pv /opt/soft && cd /opt/soft && wget -c  https://github.com/swoole/sw
 COPY php-fpm.conf  /usr/local/php/etc/
 COPY www.conf  /usr/local/php/etc/php-fpm.d/
 COPY php.ini  /usr/local/php/etc/
+#配置端口
+EXPOSE 8080
 
 USER www
 WORKDIR /home/www
