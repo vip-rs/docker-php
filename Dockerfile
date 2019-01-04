@@ -52,7 +52,9 @@ RUN mkdir -pv /opt/soft && cd /opt/soft && wget -c  https://github.com/swoole/sw
 COPY php-fpm.conf  /usr/local/php/etc/
 COPY www.conf  /usr/local/php/etc/php-fpm.d/
 COPY php.ini  /usr/local/php/etc/
-#配置端口
+#容器启动后执行的命令，并且不可被 docker run 提供的参数覆盖
+ENTRYPOINT ["/usr/local/php/sbin/php-fpm"]
+#暴露的端口号
 EXPOSE 8080
 
 USER www
