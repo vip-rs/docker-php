@@ -59,4 +59,4 @@ WORKDIR /home/www
 #暴露的端口号
 EXPOSE 9000
 #容器启动后执行的命令
-CMD ["/usr/local/php/sbin/php-fpm"]
+CMD ["/usr/local/php/sbin/php-fpm"] 
