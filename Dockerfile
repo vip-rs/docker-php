@@ -53,11 +53,10 @@ COPY php-fpm.conf  /usr/local/php/etc/
 COPY www.conf  /usr/local/php/etc/php-fpm.d/
 COPY php.ini  /usr/local/php/etc/
 
-#暴露的端口号
-EXPOSE 9000
-
-#容器启动后执行的命令
-CMD ["/usr/local/php/sbin/php-fpm"]
-
 USER www
 WORKDIR /home/www
+
+#暴露的端口号
+EXPOSE 9000
+#容器启动后执行的命令
+CMD ["/usr/local/php/sbin/php-fpm"]
