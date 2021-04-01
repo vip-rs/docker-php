@@ -45,7 +45,7 @@ RUN mkdir -pv /opt/soft && cd /opt/soft && wget -c -nv  http://pecl.php.net/get/
 RUN mkdir -pv /opt/soft && cd /opt/soft && git clone https://github.com/jonnywang/phpjieba.git --depth=1 &&  cd phpjieba/cjieba && make && cd .. && /usr/local/php/bin/phpize && ./configure  --with-php-config=/usr/local/php/bin/php-config  && make && make install && rm -rf /opt/soft
 
 #编译 swoole
-RUN mkdir -pv /opt/soft && cd /opt/soft && wget -c  https://github.com/swoole/swoole-src/archive/v4.6.4.tar.gz && tar -zxf v4.6.4.tar.gz  && cd swoole-src-4.6.4  &&  /usr/local/php/bin/phpize && ./configure  --enable-sockets  --enable-openssl  --with-openssl-dir=/usr/local/openssl    --enable-http2  --with-nghttp2-dir=/usr/local/include/nghttp2   --enable-mysqlnd   --enable-coroutine-postgresql  --enable-debug-log  --enable-trace-log   --with-php-config=/usr/local/php/bin/php-config && make && make install && rm -rf /opt/soft
+RUN mkdir -pv /opt/soft && cd /opt/soft && wget -c  https://github.com/swoole/swoole-src/archive/v4.4.23.tar.gz && tar -zxf v4.4.23.tar.gz  && cd swoole-src-4.4.23  &&  /usr/local/php/bin/phpize && ./configure  --enable-sockets  --enable-openssl  --with-openssl-dir=/usr/local/openssl    --enable-http2  --with-nghttp2-dir=/usr/local/include/nghttp2   --enable-mysqlnd   --enable-coroutine-postgresql  --enable-debug-log  --enable-trace-log   --with-php-config=/usr/local/php/bin/php-config && make && make install && rm -rf /opt/soft
 
 
 #copy 配置文件
