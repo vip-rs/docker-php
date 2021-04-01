@@ -39,7 +39,7 @@ RUN mkdir -pv /opt/soft && cd /opt/soft && wget -c -nv https://cmake.org/files/v
 RUN mkdir -pv /opt/soft && cd /opt/soft && wget -c -nv https://www.openssl.org/source/openssl-1.0.2o.tar.gz && tar -zxf openssl-1.0.2o.tar.gz && cd openssl-1.0.2o && ./config shared --prefix=/usr/local/openssl --openssldir=/usr/lib/openssl && make && make install && rm -rf /opt/soft
 
 #编译 hiredis
-RUN mkdir -pv /opt/soft && cd /opt/soft && wget -c -nv --no-check-certificate https://github.com/redis/hiredis/archive/v0.13.3.tar.gz && tar -xzf v0.13.3.tar.gz && cd hiredis-0.13.3 && make -j && make install && ldconfig && mkdir -pv /usr/lib/hiredis && cp libhiredis.so /usr/lib/hiredis && mkdir -pv /usr/include/hiredis &&  cp hiredis.h /usr/include/hiredis && rm -rf /opt/soft
+RUN mkdir -pv /opt/soft && cd /opt/soft && wget -c -nv --no-check-certificate https://github.com/redis/hiredis/archive/v0.14.1.tar.gz && tar -xzf v0.14.1.tar.gz && cd hiredis-0.14.1 && make -j && make install && ldconfig && mkdir -pv /usr/lib/hiredis && cp libhiredis.so /usr/lib/hiredis && mkdir -pv /usr/include/hiredis &&  cp hiredis.h /usr/include/hiredis && rm -rf /opt/soft
 
 #编译 inotify-tools
 RUN mkdir -pv /opt/soft && cd /opt/soft && wget -c -nv https://github.com/rvoicilas/inotify-tools/archive/3.20.1.tar.gz && tar -zxf 3.20.1.tar.gz && cd inotify-tools-3.20.1 && ./autogen.sh && ./configure && make && make install && ln -sv /usr/local/lib/libinotify* /usr/lib/ &&  rm -rf /opt/soft
