@@ -10,7 +10,7 @@ MAINTAINER 1396981439@qq.com
 RUN mkdir -pv /opt/soft && cd /opt/soft && wget -c -nv http://pecl.php.net/get/libsodium-2.0.10.tgz && tar -zxf libsodium-2.0.10.tgz && cd libsodium-2.0.10 && /usr/local/php/bin/phpize && ./configure --with-php-config=/usr/local/php/bin/php-config && make && make install && rm -rf /opt/soft
 
 #编译 libdatrie 插件
-RUN mkdir -pv /opt/soft && cd /opt/soft && wget -c -nv  https://linux.thai.net/pub/ThaiLinux/software/libthai/libdatrie-0.2.11.tar.xz && tar -zxf libdatrie-0.2.11.tar.xz && cd libdatrie-0.2.11 && ./configure --prefix=/usr/local && make && make install && rm -rf /opt/soft
+RUN mkdir -pv /opt/soft && cd /opt/soft && wget -c -nv  https://linux.thai.net/pub/ThaiLinux/software/libthai/libdatrie-0.2.5.tar.gz && tar -zxf libdatrie-0.2.5.tar.gz && cd libdatrie-0.2.5 && ./configure --prefix=/usr/local && make && make install && rm -rf /opt/soft
 
 #编译 php-ds
 RUN mkdir -pv /opt/soft && cd /opt/soft && git clone https://github.com/php-ds/extension.git && cd extension && /usr/local/php/bin/phpize && ./configure --with-php-config=/usr/local/php/bin/php-config && make && make install && rm -rf /opt/soft
