@@ -39,7 +39,7 @@ RUN mkdir -pv /opt/soft && cd /opt/soft && wget -c -nv https://cmake.org/files/v
 RUN mkdir -pv /opt/soft && cd /opt/soft && wget -c -nv https://www.openssl.org/source/openssl-1.0.2o.tar.gz && tar -zxf openssl-1.0.2o.tar.gz && cd openssl-1.0.2o && ./config shared --prefix=/usr/local/openssl --openssldir=/usr/lib/openssl && make && make install && rm -rf /opt/soft
 
 #编译 hiredis
-#RUN mkdir -pv /opt/soft && cd /opt/soft && wget -c -nv --no-check-certificate https://github.com/redis/hiredis/archive/v0.14.1.tar.gz && tar -xzf v0.14.1.tar.gz && cd hiredis-0.14.1 && make -j && make install && ldconfig && mkdir -pv /usr/lib/hiredis && cp libhiredis.so /usr/lib/hiredis && mkdir -pv /usr/include/hiredis &&  cp hiredis.h /usr/include/hiredis && rm -rf /opt/soft
+RUN mkdir -pv /opt/soft && cd /opt/soft && wget -c -nv https://github.com/redis/hiredis/archive/v0.14.1.tar.gz && tar -xzf v0.14.1.tar.gz && cd hiredis-0.14.1 && make -j && make install && ldconfig && mkdir -pv /usr/lib/hiredis && cp libhiredis.so /usr/lib/hiredis && mkdir -pv /usr/include/hiredis &&  cp hiredis.h /usr/include/hiredis && rm -rf /opt/soft
 
 #编译 inotify-tools
 RUN mkdir -pv /opt/soft && cd /opt/soft && wget -c -nv https://github.com/rvoicilas/inotify-tools/archive/3.20.1.tar.gz && tar -zxf 3.20.1.tar.gz && cd inotify-tools-3.20.1 && ./autogen.sh && ./configure && make && make install && ln -sv /usr/local/lib/libinotify* /usr/lib/ &&  rm -rf /opt/soft
@@ -55,7 +55,7 @@ RUN mkdir -pv /opt/soft && cd /opt/soft && wget -c -nv https://github.com/jemall
 RUN mkdir -pv /opt/soft && cd /opt/soft && wget -c -nv https://github.com/jedisct1/libsodium/archive/1.0.16.tar.gz && tar -zxf 1.0.16.tar.gz &&  cd libsodium-1.0.16  && ./autogen.sh && ./configure && make && make check && make install  && rm -rf /opt/soft
 
 #敏感词过滤
-#RUN mkdir -pv /opt/soft && cd /opt/soft && wget -c -nv https://linux.thai.net/pub/thailinux/software/libthai/libdatrie-0.2.13.tar.xz && tar -zxf libdatrie-0.2.13.tar.gz && cd  libdatrie-0.2.13 && ./configure  --prefix=/usr/local/libdatrie && make && make install && rm -rf /opt/soft
+RUN mkdir -pv /opt/soft && cd /opt/soft && wget -c -nv https://linux.thai.net/pub/thailinux/software/libthai/libdatrie-0.2.13.tar.xz && tar -zxf libdatrie-0.2.13.tar.gz && cd  libdatrie-0.2.13 && ./configure  --prefix=/usr/local/libdatrie && make && make install && rm -rf /opt/soft
 
 #安装opencv2.0	 #安装opencv2.0
-RUN mkdir -pv /opt/soft && cd /opt/soft && wget https://github.com/opencv/opencv/archive/2.4.4.tar.gz && tar -zxf 2.4.4.tar.gz && cd opencv-2.4.4/ && cmake CMakeLists.txt && make && make install && export PKG_CONFIG_PATH=/usr/lib/pkgconfig/:/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH && echo "/usr/local/lib/" > /etc/ld.so.conf.d/opencv.conf  && ldconfig && rm -rf /opt/soft
+RUN mkdir -pv /opt/soft && cd /opt/soft && wget https://github.com/opencv/opencv/archive/2.4.9.tar.gz && tar -zxf 2.4.9.tar.gz && cd opencv-2.4.9/ && cmake CMakeLists.txt && make && make install && export PKG_CONFIG_PATH=/usr/lib/pkgconfig/:/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH && echo "/usr/local/lib/" > /etc/ld.so.conf.d/opencv.conf  && ldconfig && rm -rf /opt/soft
