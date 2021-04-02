@@ -1,4 +1,4 @@
-# Version 0.2
+# Version 0.3
 # 基础镜像
 FROM daocloud.io/php_ity/doc-php:php
 
