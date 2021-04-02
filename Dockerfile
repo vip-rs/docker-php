@@ -1,6 +1,6 @@
 # Version 0.2
 # 基础镜像
-FROM daocloud.io/php_ity/docker-php:base
+FROM daocloud.io/php_ity/doc-php:base
 
 # 维护者信息
 MAINTAINER 1396981439@qq.com
