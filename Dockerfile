@@ -39,11 +39,8 @@ RUN mkdir -pv /opt/soft && cd /opt/soft && git clone https://github.com/wulijun/
 #编译 imagick 插件
 RUN mkdir -pv /opt/soft && cd /opt/soft && wget -c -nv  http://pecl.php.net/get/imagick-3.4.3.tgz && tar -zxf imagick-3.4.3.tgz && cd imagick-3.4.3 && /usr/local/php/bin/phpize && ./configure  --with-php-config=/usr/local/php/bin/php-config  && make && make install && rm -rf /opt/soft
 
-
-
 #编译智能裁剪图片
-#RUN mkdir -pv /opt/soft && cd /opt/soft && git clone https://github.com/abulo/tclip.git --depth=1 && cd tclip/php_ext && /usr/local/php/bin/phpize && ./configure  --with-php-config=/usr/local/php/bin/php-config  && make && make install && rm -rf /opt/soft
-
+RUN mkdir -pv /opt/soft && cd /opt/soft && wget -c -nv https://github.com/exinnet/tclip/archive/1.0.0.tar.gz && tar -zxf 1.0.0.tar.gz  && tclip-1.0.0/php_ext/ &&  /usr/local/php/bin/phpize && ./configure  --with-php-config=/usr/local/php/bin/php-config && make && make install && rm -rf /opt/soft
 #编译分词
 RUN mkdir -pv /opt/soft && cd /opt/soft && git clone https://github.com/jonnywang/phpjieba.git --depth=1 &&  cd phpjieba/cjieba && make && cd .. && /usr/local/php/bin/phpize && ./configure  --with-php-config=/usr/local/php/bin/php-config  && make && make install && rm -rf /opt/soft
 
