@@ -31,7 +31,7 @@ RUN mkdir -pv /opt/soft && cd /opt/soft && wget -c -nv  http://pecl.php.net/get/
 RUN mkdir -pv /opt/soft && cd /opt/soft && wget -c -nv  http://pecl.php.net/get/inotify-3.0.0.tgz  && tar -zxf  inotify-3.0.0.tgz  && cd inotify-3.0.0 && /usr/local/php/bin/phpize && ./configure  --with-php-config=/usr/local/php/bin/php-config  && make && make install && rm -rf /opt/soft
 
 #编译 mongodb 插件
-RUN mkdir -pv /opt/soft && cd /opt/soft && wget -c -nv  http://pecl.php.net/get/mongodb-1.8.2.tgz && tar -zxf mongodb-1.8.2.tgz && cd mongodb-1.8.2 && /usr/local/php/bin/phpize && ./configure  --with-php-config=/usr/local/php/bin/php-config  && make && make install && rm -rf /opt/soft
+RUN mkdir -pv /opt/soft && cd /opt/soft && wget -c -nv  http://pecl.php.net/get/mongodb-1.9.0.tgz && tar -zxf mongodb-1.9.0.tgz && cd mongodb-1.9.0 && /usr/local/php/bin/phpize && ./configure  --with-php-config=/usr/local/php/bin/php-config  && make && make install && rm -rf /opt/soft
 
 #敏感词过滤PHP 扩展
 RUN mkdir -pv /opt/soft && cd /opt/soft && git clone https://github.com/wulijun/php-ext-trie-filter.git && cd php-ext-trie-filter  &&  /usr/local/php/bin/phpize &&  ./configure   --with-php-config=/usr/local/php/bin/php-config  --with-trie_filter=/usr/local/libdatrie && make && make install && rm -rf /opt/soft
