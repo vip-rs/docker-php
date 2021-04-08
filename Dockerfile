@@ -37,7 +37,7 @@ RUN mkdir -pv /opt/soft && cd /opt/soft && wget -c -nv  http://pecl.php.net/get/
 #RUN mkdir -pv /opt/soft && cd /opt/soft && git clone https://github.com/wulijun/php-ext-trie-filter.git && cd php-ext-trie-filter  &&  /usr/local/php/bin/phpize &&  ./configure   --with-php-config=/usr/local/php/bin/php-config  --with-trie_filter=/usr/local/libdatrie && make && make install && rm -rf /opt/soft
 
 #编译 imagick 插件
-RUN mkdir -pv /opt/soft && cd /opt/soft && wget -c -nv  http://pecl.php.net/get/imagick-3.4.4.tgz && tar -zxf imagick-3.4.4.tgz && cd imagick-3.4.4 && /usr/local/php/bin/phpize && ./configure  --with-php-config=/usr/local/php/bin/php-config  && make && make install && rm -rf /opt/soft
+RUN mkdir -pv /opt/soft && cd /opt/soft && wget -c -nv  http://pecl.php.net/get/imagick-3.4.0.tgz && tar -zxf imagick-3.4.0.tgz && cd imagick-3.4.0 && /usr/local/php/bin/phpize && ./configure  --with-php-config=/usr/local/php/bin/php-config  && make && make install && rm -rf /opt/soft
 
 #编译智能裁剪图片
 RUN mkdir -pv /opt/soft && cd /opt/soft && wget -c -nv https://github.com/exinnet/tclip/archive/1.0.0.tar.gz && tar -zxf 1.0.0.tar.gz  && cd tclip-1.0.0/php_ext/ &&  /usr/local/php/bin/phpize && ./configure  --with-php-config=/usr/local/php/bin/php-config && make && make install && rm -rf /opt/soft
