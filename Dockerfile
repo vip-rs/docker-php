@@ -1,6 +1,6 @@
 # Version 0.2
 # 基础镜像
-FROM ubuntu:20.04
+FROM ubuntu:16.04
 
 # 维护者信息
 MAINTAINER 1396981439@qq.com
